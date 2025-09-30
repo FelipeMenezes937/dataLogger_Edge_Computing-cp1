@@ -1,2 +1,54 @@
-# dataLogger_Edge_Computing-cp1
-Projeto em C++ para Arduino que implementa um sistema de coleta e exibição de dados utilizando fotoresistor, buzzer, LEDs e display LCD. O sistema registra a intensidade luminosa e fornece alertas visuais e sonoros, funcionando como um data logger em ambiente de Edge Computing.
+# 📊 Data Logger com Arduino – Luminosidade em Edge Computing  
+
+![Montagem do circuito](efd2093f-a812-4718-bb1a-2a6a83323201.png)  
+
+## 📘 Contexto Acadêmico  
+Este projeto foi desenvolvido como parte da **matéria de Edge Computing**, com o objetivo de aplicar conceitos de coleta, processamento e análise de dados diretamente em dispositivos embarcados, reduzindo a dependência de processamento em nuvem.  
+
+---
+
+## 🔎 Sobre o Projeto  
+Este projeto em **C++ para Arduino** implementa um sistema de **coleta e exibição de dados de luminosidade** utilizando:  
+
+- 📡 **Fotoresistor (LDR)** – para captar a intensidade da luz ambiente.  
+- 💡 **LEDs (verde, amarelo e vermelho)** – indicam níveis de luminosidade.  
+- 🔔 **Buzzer** – fornece alertas sonoros conforme a intensidade da luz.  
+- 📺 **Display LCD 16x2** – exibe em tempo real os valores de luminosidade em percentual.  
+
+O sistema funciona como um **data logger**, armazenando leituras periódicas e exibindo a média a cada ciclo. Além disso, segue a lógica de **Edge Computing**, processando os dados diretamente no dispositivo antes de qualquer envio ou análise externa.  
+
+---
+
+## ⚙️ Funcionamento  
+1. O **LDR** realiza a leitura da luminosidade (0–1023).  
+2. A cada **10 leituras**, o Arduino calcula a média.  
+3. Essa média é **mapeada para escala percentual invertida** (100% = mais claro, 0% = escuro).  
+4. Dependendo do valor, o sistema aciona LEDs e o buzzer:  
+   - 🔴 **> 80%** → LED vermelho + buzzer forte.  
+   - 🟡 **60–80%** → LED amarelo + buzzer fraco.  
+   - 🟢 **< 60%** → LED verde + sem som.  
+5. O valor é exibido no **LCD** e enviado via **Serial Monitor**.  
+
+---
+
+## 🛠️ Componentes Utilizados  
+- 1x Arduino UNO  
+- 1x Protoboard  
+- 1x LDR (fotoresistor)  
+- 1x Resistor de 10kΩ (para o LDR)  
+- 3x LEDs (verde, amarelo, vermelho)  
+- 3x Resistores de 220Ω (para os LEDs)  
+- 1x Buzzer piezoelétrico  
+- 1x Display LCD 16x2 (com interface paralela)  
+- Jumpers  
+
+---
+
+## 👥 Integrantes  
+
+| Nome completo               | Função        |
+|-----------------------------|---------------|
+| Felipe Silva Santos Menezes | Desenvolvedor |
+| Gabriel Ardito Manes        | Desenvolvedor |
+| João Antonio Sarracine      | Desenvolvedor |
+| João Pedro Gonzales         | Desenvolvedor |
