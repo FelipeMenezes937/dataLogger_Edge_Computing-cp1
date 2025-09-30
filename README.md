@@ -1,7 +1,12 @@
 # 📊 Data Logger com Arduino – Luminosidade em Edge Computing  
 
-![Montagem do circuito](efd2093f-a812-4718-bb1a-2a6a83323201.png)  
+## 📷 Imagens do Projeto
 
+### Montagem no Tinkercad
+<p align="center">
+  <img src="./img/tinkercad1.jpeg" alt="Montagem 1" width="400"/>
+  <img src="./img/tinkercad2.png" alt="Montagem 2" width="400"/>
+</p>
 ## 📘 Contexto Acadêmico  
 Este projeto foi desenvolvido como parte da **matéria de Edge Computing**, com o objetivo de aplicar conceitos de coleta, processamento e análise de dados diretamente em dispositivos embarcados, reduzindo a dependência de processamento em nuvem.  
 
