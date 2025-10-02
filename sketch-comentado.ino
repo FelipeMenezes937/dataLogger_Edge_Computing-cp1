@@ -1,94 +1,86 @@
-#include <LiquidCrystal.h>  
-// Biblioteca para controlar o display LCD
+#include <LiquidCrystal.h>  // Biblioteca para controlar o display LCD
 
-// Define os pinos de conexão do LCD: RS, E, D4, D5, D6, D7
+// Define os pinos do LCD: RS, E, D4, D5, D6, D7
 LiquidCrystal lcd(12, 11, 10, 5, 4, 3, 2);
 
-// Definição dos pinos usados no projeto
-int ldr = A0;     // Entrada analógica do LDR (sensor de luminosidade)
-int buzz = 13;    // Pino do buzzer
-int valorldr = 0; // Variável para armazenar a leitura do LDR
-int ledG = 6;     // LED verde
-int ledY = 7;     // LED amarelo
-int ledR = 8;     // LED vermelho
+int ldr = A0;        // Pino analógico conectado ao LDR (sensor de luminosidade)
+int buzz = 13;       // Pino conectado ao buzzer
+int valorldr = 0;    // Variável para armazenar a leitura do LDR
+int ledG = 6;        // Pino do LED verde
+int ledY = 7;        // Pino do LED amarelo
+int ledR = 8;        // Pino do LED vermelho
 
-// Variáveis auxiliares para calcular a média das leituras
-int nloops = 0;        // Contador de loops
-float somaldr = 0;     // Acumula valores lidos pelo LDR
-int mediaLDR = 0;      // Média das leituras do LDR
+int nloops = 0;      // Contador de leituras (quantas vezes o LDR foi lido)
+float somaldr = 0;   // Soma de todas as leituras para calcular a média
+int mediaLDR = 0;    // Valor médio das leituras
 
 void setup() {
-  // Inicializa o LCD com 16 colunas e 2 linhas
-  lcd.begin(16, 2);
-  lcd.clear();
-  lcd.setCursor(0, 0); // Coloca o cursor na primeira linha
-  lcd.print("Luminosidade:"); // Mensagem inicial no LCD
+  lcd.begin(16, 2);         // Inicializa o display LCD 16x2
+  lcd.clear();              // Limpa o display
+  lcd.setCursor(0, 0);      // Define o cursor na primeira linha, primeira coluna
+  lcd.print("Luminosidade:");// Escreve o título no LCD
 
-  // Configura pinos como entrada ou saída
+  // Define os pinos como saída ou entrada
   pinMode(ledG, OUTPUT);
   pinMode(ledY, OUTPUT);
   pinMode(ledR, OUTPUT);
   pinMode(ldr, INPUT);
   pinMode(buzz, OUTPUT);
 
-  // Inicializa comunicação serial (para monitoramento no PC)
-  Serial.begin(9600);
+  Serial.begin(9600);       // Inicializa a comunicação serial (para monitor)
 }
 
 void loop() {
-  // Faz a leitura do sensor LDR
-  valorldr = analogRead(ldr);
-  somaldr += valorldr; // Soma os valores lidos
-  nloops++;            // Incrementa o contador
+  valorldr = analogRead(ldr); // Faz a leitura do LDR (0 a 1023)
+  somaldr += valorldr;        // Soma a leitura ao acumulador
+  nloops++;                   // Incrementa o contador de leituras
 
-  // A cada 10 leituras, calcula a média
-  if (nloops == 10) {
-    mediaLDR = somaldr / nloops;
+  if (nloops == 10) {         // Quando tiver 10 leituras acumuladas
+    mediaLDR = somaldr / nloops;  // Calcula a média das leituras
 
-    // Mapeia o valor para uma escala de 0 a 100 invertida
-    // (quanto mais luz, menor o valor)
-    int valorMapeado = map(mediaLDR, 0, 1023, 100, 0);
+    // Converte a média de 0–1023 para uma escala de 0–100
+    int valorMapeado = map(mediaLDR, 0, 1023, 0, 100);
 
-    // Atualiza o display LCD
-    lcd.setCursor(0, 1); // Vai para a segunda linha
-    lcd.print("  ");      // Limpa a linha
+    // Atualiza a linha 2 do LCD
     lcd.setCursor(0, 1);
-    lcd.print(valorMapeado);
-    lcd.print("%");       // Mostra a porcentagem
-
-    // Envia os dados para o monitor serial
+    lcd.print("                "); // Apaga a linha (16 espaços)
+    lcd.setCursor(0, 1);
+    lcd.print(valorMapeado);       // Mostra a luminosidade em %
+	lcd.print("%");					//Mostra o sinal de porcentagem
+    
+    // Também envia para o monitor serial
     Serial.print("Media LDR: ");
     Serial.println(valorMapeado);
+    
 
-    // Desliga LEDs e buzzer antes de verificar as condições
+    // Desliga todos os LEDs e o buzzer antes de checar condições
     digitalWrite(ledR, LOW);
     digitalWrite(ledY, LOW);
     digitalWrite(ledG, LOW);
     noTone(buzz);
 
-    // Verifica condições de luminosidade:
+    // Checa as condições de luminosidade
     if (valorMapeado > 80) {
-      // Ambiente muito iluminado → LED vermelho e buzzer forte
+      // Muito claro → LED vermelho aceso + buzzer forte
       digitalWrite(ledR, HIGH);
-      tone(buzz, 5000); // Frequência alta (som forte)
+      tone(buzz, 5000); // Frequência alta
     }
     else if (valorMapeado >= 60 && valorMapeado <= 80) {
-      // Luminosidade média → LED amarelo e buzzer fraco por 3s
+      // Luminosidade média → LED amarelo aceso + buzzer fraco intermitente
       digitalWrite(ledY, HIGH);
-      tone(buzz, 300);  // Frequência baixa (som fraco)
-      delay(3000);
-      noTone(buzz);     // Para o buzzer após o tempo
+      tone(buzz, 300);  // Frequência baixa
+      delay(3000);      // Espera 3 segundos
+      noTone(buzz);     // Desliga o buzzer
     }
     else if (valorMapeado < 60) {
-      // Ambiente pouco iluminado → LED verde, sem som
+      // Pouca luz → LED verde aceso, buzzer desligado
       digitalWrite(ledG, HIGH);
     }
 
-    // Reseta variáveis para próxima média
+    // Reseta os acumuladores para o próximo ciclo de médias
     nloops = 0;
     somaldr = 0;
   }
 
-  // Intervalo entre leituras (meio segundo)
-  delay(500);
+  delay(500); // Espera meio segundo antes da próxima leitura
 }
