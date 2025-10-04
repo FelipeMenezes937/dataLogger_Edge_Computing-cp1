@@ -26,7 +26,7 @@ Este projeto em **C++ para Arduino** implementa um sistema de **coleta e exibiç
 O sistema funciona como um **data logger**, armazenando leituras periódicas e exibindo a média a cada ciclo. Além disso, segue a lógica de **Edge Computing**, processando os dados diretamente no dispositivo antes de qualquer envio ou análise externa.  
 
 ---
-## 🎞️ Animação no LCD – Logo da Vinheria Agnello ##
+## 🎞️ Animação no LCD – Logo da Vinheria Agnello
 
 Para tornar o projeto mais imersivo e visualmente atrativo, foi desenvolvida uma *animação personalizada no display LCD 16x2, simulando o **nome da equipe: APAP Systems* na inicialização do sistema.
 
