@@ -73,7 +73,7 @@ git clone https://github.com/FelipeMenezes937/dataLogger_Edge_Computing-cp1.git
 
 Você pode visualizar e simular o circuito diretamente no Tinkercad clicando no link abaixo:
 
-🔗 [🔗 **Simulação no Tinkercad – APAP Systems**](https://www.tinkercad.com/things/j4GvhtR8X8C-apap-systems-lcd-animation)
+🔗 [🔗 **Simulação no Tinkercad – APAP Systems**](http://tinkercad.com/things/2nAddc4Ixb1-cp1/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=uASW2DQbUVA2gPW22JARevW7iP4bH6m8SrKAxelOU2c)
 ## 👥 Integrantes  
 
 | Nome completo               | Função        |
