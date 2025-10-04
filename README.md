@@ -28,7 +28,7 @@ O sistema funciona como um **data logger**, armazenando leituras periódicas e e
 ---
 ## 🎞️ Animação no LCD – Logo da Vinheria Agnello
 
-Para tornar o projeto mais imersivo e visualmente atrativo, foi desenvolvida uma *animação personalizada no display LCD 16x2, simulando o **nome da equipe: APAP Systems* na inicialização do sistema.
+Para tornar o projeto mais imersivo e visualmente atrativo, foi desenvolvida uma **animação personalizada no display LCD 16x2, simulando o nome da equipe: APAP Systems** na inicialização do sistema.
 
 A animação é construída a partir de *caracteres customizados* criados com a função lcd.createChar().  
 Como o LCD suporta apenas *8 caracteres personalizados*, cada letra do logotipo é dividida em partes (superior/inferior, esquerda/direita), permitindo formar letras grandes no display.
