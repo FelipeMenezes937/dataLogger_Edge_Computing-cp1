@@ -26,6 +26,15 @@ Este projeto em **C++ para Arduino** implementa um sistema de **coleta e exibiç
 O sistema funciona como um **data logger**, armazenando leituras periódicas e exibindo a média a cada ciclo. Além disso, segue a lógica de **Edge Computing**, processando os dados diretamente no dispositivo antes de qualquer envio ou análise externa.  
 
 ---
+## 🎞️ Animação no LCD – Logo da Vinheria Agnello
+
+Para tornar o projeto mais imersivo e visualmente atrativo, foi desenvolvida uma *animação personalizada no display LCD 16x2, simulando o **nome da equipe: APAP Systems* na inicialização do sistema.
+
+A animação é construída a partir de *caracteres customizados* criados com a função lcd.createChar().  
+Como o LCD suporta apenas *8 caracteres personalizados*, cada letra do logotipo é dividida em partes (superior/inferior, esquerda/direita), permitindo formar letras grandes no display.
+
+O texto se desloca da *direita para a esquerda, criando um efeito de movimento que representa a entrada do nome da equipe — *“APAP”**, a abreviacao de "APAP Systems – “Arruma Primeiro, Apaga Depois”" ao iniciar o sistema.
+---
 
 ## ⚙️ Funcionamento  
 1. O **LDR** realiza a leitura da luminosidade (0–1023).  
