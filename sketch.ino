@@ -13,6 +13,7 @@ int nloops = 0;
 float somaldr = 0;
 int mediaLDR = 0;
 
+<<<<<<< HEAD
 byte A_topleft[8] = {
   B00000, B00000, B00011, B01111,
   B11000, B11000, B11000, B11000
@@ -70,6 +71,8 @@ void desenhaTexto(int pos) {
   lcd.write(byte(7));
 }
 
+=======
+>>>>>>> 6905b358c4a17c76dde02d67cf6f6c401e583834
 void setup() {
   lcd.begin(16, 2);
 
@@ -112,7 +115,11 @@ void loop() {
     int valorMapeado = map(mediaLDR, 0, 1023, 0, 100);
 
     lcd.setCursor(0, 1);
+<<<<<<< HEAD
     lcd.print("    ");
+=======
+    lcd.print("                ");
+>>>>>>> 6905b358c4a17c76dde02d67cf6f6c401e583834
     lcd.setCursor(0, 1);
     lcd.print(valorMapeado);
     lcd.print("%");
@@ -125,7 +132,11 @@ void loop() {
     digitalWrite(ledG, LOW);
     noTone(buzz);
 
+<<<<<<< HEAD
     if (valorMapeado >= 80) {
+=======
+    if (valorMapeado > 80) {
+>>>>>>> 6905b358c4a17c76dde02d67cf6f6c401e583834
       digitalWrite(ledR, HIGH);
       tone(buzz, 1000);
     }
@@ -143,5 +154,9 @@ void loop() {
     somaldr = 0;
   }
 
+<<<<<<< HEAD
   delay(250);
+=======
+  delay(500);
+>>>>>>> 6905b358c4a17c76dde02d67cf6f6c401e583834
 }
