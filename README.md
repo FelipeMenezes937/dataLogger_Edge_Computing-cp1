@@ -24,18 +24,16 @@ Este projeto em **C++ para Arduino** implementa um sistema de **coleta e exibiç
 - 📺 **Display LCD 16x2** – exibe em tempo real os valores de luminosidade em percentual.  
 
 O sistema funciona como um **data logger**, armazenando leituras periódicas e exibindo a média a cada ciclo. Além disso, segue a lógica de **Edge Computing**, processando os dados diretamente no dispositivo antes de qualquer envio ou análise externa.  
-
 ---
-## 🎞️ Animação no LCD – Logo da Vinheria Agnello
+## 🎞️ Animação no LCD – Logo da Vinheria Agnello  
 
-Para tornar o projeto mais imersivo e visualmente atrativo, foi desenvolvida uma **animação personalizada no display LCD 16x2, simulando o nome da equipe: APAP Systems** na inicialização do sistema.
+Para tornar o projeto mais imersivo e visualmente atrativo, foi desenvolvida uma animação personalizada no display LCD 16x2, simulando o nome da equipe *APAP Systems* na inicialização do sistema.  
 
-A animação é construída a partir de *caracteres customizados* criados com a função lcd.createChar().  
-Como o LCD suporta apenas *8 caracteres personalizados*, cada letra do logotipo é dividida em partes (superior/inferior, esquerda/direita), permitindo formar letras grandes no display.
+A animação é construída a partir de *caracteres customizados* criados com a função `lcd.createChar()`.  
+Como o LCD suporta apenas **8 caracteres personalizados**, cada letra do logotipo é dividida em partes (superior/inferior, esquerda/direita), permitindo formar letras grandes no display.  
 
-O texto se desloca da *direita para a esquerda, criando um efeito de movimento que representa a entrada do nome da equipe — **“APAP”**, a abreviação de "APAP  “Adaptive Photometric Alarm Platform" ao iniciar o sistema.
+O texto se desloca da direita para a esquerda, criando um efeito de movimento que representa a entrada do nome da equipe — *“APAP”*, abreviação de *Adaptive Photometric Alarm Platform*, ao iniciar o sistema.  
 ---
-
 ## ⚙️ Funcionamento  
 1. O **LDR** realiza a leitura da luminosidade (0–1023).  
 2. A cada **10 leituras**, o Arduino calcula a média.  
@@ -61,6 +59,24 @@ O texto se desloca da *direita para a esquerda, criando um efeito de movimento q
 
 ---
 
+
+## ⚙️ Como Reproduzir o Projeto
+
+### 🧩 1. Clonar o Repositório
+
+Para obter os arquivos do projeto em sua máquina local, execute o comando abaixo no terminal (Bash ou Git Bash):
+
+```bash
+git clone https://github.com/FelipeMenezes937/dataLogger_Edge_Computing-cp1.git
+```
+## 💡 2. Abrir o Circuito no Tinkercad
+
+Você pode visualizar e simular o circuito diretamente no Tinkercad clicando no link abaixo:
+
+🔗 Acessar Simulação no Tinkercad por link 
+```
+https://www.tinkercad.com/things/2nAddc4Ixb1-cp1/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=uASW2DQbUVA2gPW22JARevW7iP4bH6m8SrKAxelOU2c
+```
 ## 👥 Integrantes  
 
 | Nome completo               | Função        |
