@@ -33,7 +33,7 @@ Para tornar o projeto mais imersivo e visualmente atrativo, foi desenvolvida uma
 A animação é construída a partir de *caracteres customizados* criados com a função lcd.createChar().  
 Como o LCD suporta apenas *8 caracteres personalizados*, cada letra do logotipo é dividida em partes (superior/inferior, esquerda/direita), permitindo formar letras grandes no display.
 
-O texto se desloca da *direita para a esquerda, criando um efeito de movimento que representa a entrada do nome da equipe — **“APAP”**, a abreviacao de "APAP Systems – “Arruma Primeiro, Apaga Depois”" ao iniciar o sistema.
+O texto se desloca da *direita para a esquerda, criando um efeito de movimento que representa a entrada do nome da equipe — **“APAP”**, a abreviacao de "APAP Systems – “Adaptive Photometric Alarm Platform" ao iniciar o sistema.
 ---
 
 ## ⚙️ Funcionamento  
