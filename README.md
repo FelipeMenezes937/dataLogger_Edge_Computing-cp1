@@ -5,7 +5,7 @@
 
 <p align="center">
   <img src="./img/tinkercad1.jpeg" alt="Montagem 1" width="400"/>
-  <img src="./img/tinkercad2.png" alt="Montagem 2" width="400"/>
+  <img src="./img/tinkercad2.jpeg" alt="Montagem 2" width="400"/>
 </p>
 
 ---
