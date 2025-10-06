@@ -17,7 +17,7 @@ Este projeto foi desenvolvido como parte da **matéria de Edge Computing**, com 
 
 ## 🍷 Contexto da Vinheria Agnello
 
-A **Vinheria Agnello** é uma tradicional casa de vinhos que, ao longo dos anos, consolidou-se pela curadoria cuidadosa e pelo atendimento personalizado, oferecendo aos clientes uma verdadeira experiência sensorial em cada visita. Diante da necessidade de expandir sua presença para o ambiente digital, a empresa busca unir tradição e tecnologia, garantindo que a qualidade e o cuidado dedicados aos rótulos sejam preservados também no armazenamento. Por isso, o projeto propõe um **sistema de monitoramento inteligente**, capaz de controlar e alertar sobre variações de **luminosidade** — fator essencial para manter a integridade e o sabor dos vinhos, refletindo o mesmo zelo que sempre caracterizou a Vinheria Agnello.
+A **Vinheria Agnello** é uma casa de vinhos tradicional que busca unir tradição e inovação. Com o desejo de expandir sua presença para o ambiente digital, a empresa aposta em um **sistema de monitoramento inteligente capaz de controlar a luminosidade do local de armazenamento**, preservando a qualidade e o sabor dos vinhos com o mesmo cuidado que marca sua história.
 
 ---
 
